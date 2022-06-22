@@ -1,0 +1,12 @@
+<resources>
+
+
+    <style name="AppTheme" parent="android:Theme">
+
+        <!-- 设置无标题 -->
+        <item name="android:windowNoTitle">true</item>
+        <!-- 设置全屏 -->
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+</resources>
