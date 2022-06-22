@@ -38,11 +38,6 @@ adb push frpc.ini /data/local/tmp/frpc.ini
 3. 依赖WIFI/ETH adb 正常运行,启用如下：
 
    ```shell
-<<<<<<< HEAD
    adb tcpip 5555
-=======
-adb tcpip 5555
->>>>>>> 02ed926df4f6c8dfdefeb33919e742d5b1edf0ea
-   ```
 
 3. 点击apk 主页中start frpc 运行即可
