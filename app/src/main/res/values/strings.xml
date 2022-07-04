@@ -2,5 +2,22 @@
     <string name="app_name">frpc</string>
     <string name="start_frpc">start frpc</string>
     <string name="quit">QUIT</string>
+    <string name="server_addr">server_addr</string>
+    <string name="server_port">server_port</string>
+    <string name="token">token</string>
+    <string name="type">type</string>
+    <string name="local_ip">local_ip</string>
+    <string name="local_port">local_port</string>
+    <string name="remote_port">remote_port</string>
+    <string name="common">[common]</string>
+
+    <string name="local_config">[本地服务配置]</string>
+
+    <string name="local_config_name">服务名称</string>
+    <string name="local_config_name_hint">字母和数字下划线组合</string>
+    <string name="reset_frpc">重置配置</string>
+
+    <string name="ts_load_default_config_success">重载默认配置成功</string>
+    <string name="ts_load_default_config_fail">重载默认配置失败</string>
     <string name="frpc_status_running">frpc is running</string>
 </resources>

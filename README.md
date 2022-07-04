@@ -40,4 +40,19 @@ adb push frpc.ini /data/local/tmp/frpc.ini
    ```shell
    adb tcpip 5555
 
-3. 点击apk 主页中start frpc 运行即可
+4. 点击apk 主页中start frpc 运行即可
+
+# 进阶使用(since v2.0)
+
+使用解包修改frpc.ini文件并重新签名安装使用
+
+```shell
+unzip app-release.apk -d app_modify
+vi app_modify/assets/frpc.ini     // 进行必要的修改
+cd app_modify
+zip -r -0 ../modify.apk *
+cd ..
+zipalign -p -f -v 4 modify.apk modify_4k.apk // 进行4k对齐
+java -jar /usr/bin/apksigner  sign --ks /mnt/d/Android/MyAndroidKey1.jks --v2-signing-enabled true --ks-key-alias key0 --out modify_4k_signed.apk modify_4k.apk          //ks路径 以你自个的ks 为准
+adb install -r -g modify_4k_signed.apk    //安装完之后即可享用
+```
