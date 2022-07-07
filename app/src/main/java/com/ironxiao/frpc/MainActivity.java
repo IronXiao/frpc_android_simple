@@ -78,7 +78,7 @@ public class MainActivity extends Activity {
     private void quitFrpc() {
         Intent intent = new Intent(this, FrpcService.class);
         stopService(intent);
-        System.exit(0);
+//        System.exit(0);
     }
 
     private void loadConfig() {

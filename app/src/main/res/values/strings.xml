@@ -20,4 +20,7 @@
     <string name="ts_load_default_config_success">重载默认配置成功</string>
     <string name="ts_load_default_config_fail">重载默认配置失败</string>
     <string name="frpc_status_running">frpc is running</string>
+    <string name="frpc_status_starting">frpc starting ...</string>
+    <string name="frpc_status_started">frpc already started</string>
+    <string name="frpc_status_stopped">frpc stopped</string>
 </resources>

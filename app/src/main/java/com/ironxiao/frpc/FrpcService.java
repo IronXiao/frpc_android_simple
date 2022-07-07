@@ -7,15 +7,14 @@ import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
 import android.os.IBinder;
+import android.widget.Toast;
 
 import java.io.File;
 
 import frpclib.Frpclib;
 
 public class FrpcService extends Service {
-    private static final String TAG = FrpcService.class.getSimpleName();
     private Notification notification;
-    private static final String FRPC_INI_PATH = "/data/local/tmp/frpc.ini";
     private boolean running = false;
 
 
@@ -44,7 +43,9 @@ public class FrpcService extends Service {
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
             startForeground(1, notification);
         }
+        final String msg;
         if (!running) {
+            msg = getString(R.string.frpc_status_starting);
             new Thread(new Runnable() {
                 @Override
                 public void run() {
@@ -54,9 +55,17 @@ public class FrpcService extends Service {
                     Frpclib.run(savePath);
                 }
             }).start();
+        } else {
+            msg = getString(R.string.frpc_status_started);
         }
+        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
         return super.onStartCommand(intent, flags, startId);
     }
 
-
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        Frpclib.stop();
+        Toast.makeText(this, getString(R.string.frpc_status_stopped), Toast.LENGTH_SHORT).show();
+    }
 }
