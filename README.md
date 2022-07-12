@@ -1,4 +1,4 @@
-# 简介
+# frpc for Android：在安卓上设备上使用frpc代理
 
 [frp](https://github.com/fatedier/frp) 在android 上的实现，在[frpc-Android](https://github.com/FrpcCluster/frpc-Android) 代码做了简化，同时更新frpc jni 库到最新。
 
